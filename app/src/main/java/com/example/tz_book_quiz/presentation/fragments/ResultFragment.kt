@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tz_book_quiz.BookQuizApp
+import com.example.tz_book_quiz.R
 import com.example.tz_book_quiz.databinding.FragmentResultBinding
 import com.example.tz_book_quiz.presentation.MainActivity
 import com.example.tz_book_quiz.presentation.adapters.ResultsAdapter
@@ -52,7 +53,10 @@ class ResultFragment : Fragment() {
         binding.rv.layoutManager = LinearLayoutManager(requireContext())
         adapter.submitList(vm.getLevelList())
 
-        binding.result.text = "Your result: ${vm.getCountOfCorrectAnswers()} / 10"
+        binding.result.text = String.format(
+            resources.getString(R.string.result_of_the_game),
+            vm.getCountOfCorrectAnswers()
+        )
 
         binding.buttonPlay.setOnClickListener {
             (requireActivity() as MainActivity).launchMenuFragment()

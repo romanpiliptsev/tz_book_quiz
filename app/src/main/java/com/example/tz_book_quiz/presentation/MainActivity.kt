@@ -2,6 +2,7 @@ package com.example.tz_book_quiz.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.tz_book_quiz.databinding.ActivityMainBinding
 import com.example.tz_book_quiz.presentation.fragments.GameFragment
 import com.example.tz_book_quiz.presentation.fragments.MenuFragment
@@ -19,30 +20,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun launchGameFragment() {
-        supportFragmentManager.beginTransaction()
-            .replace(
-                binding.fragmentContainer.id,
-                GameFragment.newInstance()
-            )
-            .addToBackStack(null)
-            .commit()
+        launchFragment(GameFragment.newInstance())
     }
 
     fun launchResultFragment() {
-        supportFragmentManager.beginTransaction()
-            .replace(
-                binding.fragmentContainer.id,
-                ResultFragment.newInstance()
-            )
-            .addToBackStack(null)
-            .commit()
+        launchFragment(ResultFragment.newInstance())
     }
 
     fun launchMenuFragment() {
+        launchFragment(MenuFragment.newInstance())
+    }
+
+    private fun launchFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(
                 binding.fragmentContainer.id,
-                MenuFragment.newInstance()
+                fragment
             )
             .addToBackStack(null)
             .commit()

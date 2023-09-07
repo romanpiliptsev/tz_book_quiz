@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.tz_book_quiz.BookQuizApp
+import com.example.tz_book_quiz.R
 import com.example.tz_book_quiz.data.model.Level
 import com.example.tz_book_quiz.databinding.FragmentGameBinding
 import com.example.tz_book_quiz.presentation.MainActivity
@@ -59,23 +60,22 @@ class GameFragment : Fragment() {
                 book1.setImageResource(it.imageList[0])
                 book2.setImageResource(it.imageList[1])
                 book3.setImageResource(it.imageList[2])
-                textFromBook.text = it.text
+                textFromBook.text = resources.getString(it.stringId)
             }
         }
-
-        val toastMessage: Toast = Toast.makeText(activity, "", Toast.LENGTH_SHORT)
 
         binding.apply {
             val list = arrayListOf(book1, book2, book3)
             list.indices.forEach {
                 list[it].setOnClickListener { _ ->
                     viewModel.savePlayerAnswer(levelNumber, it + 1)
-                    val toastText: String = if (currentLevel.correctAnswer == it + 1) "Correct!" else "Wrong :("
-                    toastMessage.apply {
-                        cancel()
-                        setText(toastText)
-                        show()
-                    }
+                    val toastText: String =
+                        if (currentLevel.correctAnswer == it + 1)
+                            resources.getString(R.string.correct)
+                        else
+                            resources.getString(R.string.wrong)
+
+                    Toast.makeText(activity, toastText, Toast.LENGTH_SHORT).show()
 
                     levelNumber++
                     if (levelNumber == 10) {

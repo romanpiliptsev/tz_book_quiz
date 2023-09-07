@@ -30,28 +30,24 @@ class ResultsAdapter :
             book2.setImageResource(levelItem.imageList[1])
             book3.setImageResource(levelItem.imageList[2])
 
-            when (levelItem.correctAnswer) {
-                1 -> book1
-                2 -> book2
-                3 -> book3
-                else -> throw RuntimeException()
-            }.let {
-                it.setBackgroundColor(ContextCompat.getColor(it.context, R.color.green))
-            }
+            setBackgroundColor(R.color.green, levelItem.correctAnswer)
 
             if (levelItem.correctAnswer == levelItem.playerAnswer) {
                 number.setTextColor(ContextCompat.getColor(number.context, R.color.green))
             } else {
                 number.setTextColor(ContextCompat.getColor(number.context, R.color.red))
+                setBackgroundColor(R.color.red, levelItem.playerAnswer)
+            }
+        }
 
-                when (levelItem.playerAnswer) {
-                    1 -> book1
-                    2 -> book2
-                    3 -> book3
-                    else -> throw RuntimeException()
-                }.let {
-                    it.setBackgroundColor(ContextCompat.getColor(it.context, R.color.red))
-                }
+        private fun setBackgroundColor(colorId: Int, answer: Int) {
+            when (answer) {
+                1 -> binding.book1
+                2 -> binding.book2
+                3 -> binding.book3
+                else -> throw RuntimeException()
+            }.let {
+                it.setBackgroundColor(ContextCompat.getColor(it.context, colorId))
             }
         }
     }

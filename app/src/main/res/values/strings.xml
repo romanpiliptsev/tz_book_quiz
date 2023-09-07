@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">tz_book_quiz</string>
+    <string name="app_name">Book Quiz</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="game_rules">MATCH THE COVER OF THE BOOK WITH ITS FIRST LINE</string>
     <string name="play">PLAY</string>
     <string name="play_button">Play button</string>
@@ -8,4 +9,20 @@
     <string name="menu_button">Menu button</string>
     <string name="menu">MENU</string>
     <string name="book_cover">Book cover</string>
+
+    <string name="level_1_text">Eh bien, mon prince. Gênes et Lucques ne sont plus que des apanages, des поместья, de la famille Buonaparte.</string>
+    <string name="level_2_text">At about nine in the morning at the end of November in melting snow, the Warsaw train was steaming fast towards St Petersburg</string>
+    <string name="level_3_text">Two households, both alike in dignity,\nIn fair Verona, where we lay our scene,\nFrom ancient grudge break to new mutiny</string>
+    <string name="level_4_text">J was baptized and educated in the Orthodox Christian faith. Even as a child and throughout my adolescence and youth I was schooled in the Orthodox beliefs.</string>
+    <string name="level_5_text">BARNARDO: Who’s there?\nFRANCISCO: Nay, answer me. Stand and unfold yourself.\nBARNARDO: Long live the King!</string>
+    <string name="level_6_text">I would never have gone to Greece had it not been for a girl named Betty Ryan who lived in the same house with me in Paris.</string>
+    <string name="level_7_text">\"Quite impossible, as you see, to start without an introduction,\" laughed Ivan.</string>
+    <string name="level_8_text">He was an old man who fished alone in a skiff in the Gulf Stream and he had gone eighty-four days now without taking a fish.</string>
+    <string name="level_9_text">Robert Cohn was once middleweight boxing champion of Princeton.</string>
+    <string name="level_10_text">At eight o\'clock on the evening of the twentieth of May all the six batteries of the N Reserve Artillery Brigade halted for the night in the village of Myestetchki on their way to camp.</string>
+
+    <string name="result_of_the_game">Your result: %s / 10</string>
+
+    <string name="correct">Correct!</string>
+    <string name="wrong">Wrong :(</string>
 </resources>
